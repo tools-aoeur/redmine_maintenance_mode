@@ -16,9 +16,16 @@ end
 
 
 # Patches to the Redmine core.
-require 'dispatcher'
+require 'dispatcher'  unless Rails::VERSION::MAJOR >= 3
 
-Dispatcher.to_prepare do
-  require_dependency 'application_controller'
-  ApplicationController.send(:include, MaintenanceMode)
+if Rails::VERSION::MAJOR >= 3
+  ActionDispatch::Callbacks.to_prepare do
+    require_dependency 'application_controller'
+    ApplicationController.send(:include, MaintenanceMode)
+  end
+else
+  Dispatcher.to_prepare do
+    require_dependency 'application_controller'
+    ApplicationController.send(:include, MaintenanceMode)
+  end
 end
