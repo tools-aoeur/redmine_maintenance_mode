@@ -2,7 +2,7 @@ module MaintenanceMode
   def self.included(base)
     base.class_eval do
       unloadable
-      prepend_before_filter(:show_maintenance_mode_page)
+      before_filter(:show_maintenance_mode_page)
 
       def show_maintenance_mode_page
         unless User.current.admin?
