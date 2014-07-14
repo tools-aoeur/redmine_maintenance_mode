@@ -14,12 +14,13 @@ Installation
 ------------
 
 * Clone or download this repo into your **redmine_root/plugins/** folder
-    $ git clone https://github.com/tofi86/redmine_maintenance_mode.git
-
+```
+$ git clone https://github.com/tofi86/redmine_maintenance_mode.git
+```
 * You have to run the plugin rake task to provide the assets (from the Redmine root directory):
-
-    $ rake redmine:plugins:migrate RAILS_ENV=production
-
+```
+$ rake redmine:plugins:migrate RAILS_ENV=production
+```
 * Restart redmine
 
 
