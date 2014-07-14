@@ -10,6 +10,19 @@ You can also **schedule maintenance windows.** Users will then be notified in ad
 **Be aware that this plugin only blocks non-admin users from the system, while the redmine rails stack is still running!**
 
 
+Installation
+------------
+
+* Clone or download this repo into your **redmine_root/plugins/** folder
+    $ git clone https://github.com/tofi86/redmine_maintenance_mode.git
+
+* You have to run the plugin rake task to provide the assets (from the Redmine root directory):
+
+    $ rake redmine:plugins:migrate RAILS_ENV=production
+
+* Restart redmine
+
+
 License
 -------
 
