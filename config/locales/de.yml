@@ -1,0 +1,13 @@
+# German strings go here for Rails i18n
+de:
+  maintenance_mode_active: Wartungsmodus aktivieren?
+  maintenance_mode_message_label: Wartungshinweis
+  maintenance_mode_message_default: "<h1>Geplante Wartungsarbeiten</h1>\n<p>Redmine ist für kurze Zeit nicht verfügbar, um eine regelmäßige Instandhaltung durchzuführen. Prüfe in einigen Minuten erneut.</p>"
+  maintenance_mode_admin_message: "System befindet sich im Wartungsmodus! Nur Administratoren haben Zugriff! Der Wartungsmodus kann auf <a href=\"/settings/plugin/redmine_maintenance_mode\">dieser Seite</a> beendet werden."
+  maintenance_mode_schedule_directions: Möchten Sie Wartungsarbeiten planen und die Nutzer vorab per Banner benachrichtigen?
+  maintenance_mode_schedule_label: Wartungsarbeiten planen?
+  maintenance_mode_schedule_message_label: Vorankündigung an die Benutzer 
+  maintenance_mode_schedule_message_default: "Vorankündigung: Im Zeitraum zwischen %{start} Uhr und %{end} Uhr wird Redmine wegen geplanter Wartungsarbeiten abgeschaltet!"
+  maintenance_mode_schedule_message_variables: Erlaubte Variablen
+  maintenance_mode_schedule_time_label: Zeitraum der Wartungsarbeiten
+  maintenance_mode_server_timezone_hint: "Zeitangaben richten sich nach der Zeitzone des Servers: %{timezone}"

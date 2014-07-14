@@ -1,0 +1,50 @@
+<% content_for :header_tags do %>
+<%= stylesheet_link_tag 'maintenance_mode', :plugin => 'redmine_maintenance_mode' %>
+<%= javascript_include_tag 'form_validation.js', :plugin => 'redmine_maintenance_mode' %>
+<% end %>
+
+<div id="settings_maintenance"<%= raw @settings['maintenance_active'] ? ' class="active"' : '' %>>
+	<br/>
+	
+	<p>
+	  <label><%= l(:maintenance_mode_active) %></label>
+	  <%= check_box_tag 'settings[maintenance_active]', '1', @settings['maintenance_active'] %>
+	</p>
+
+	<p>
+	  <label><%= l(:maintenance_mode_message_label) %><span class="required"> *</span></label>
+	  <%= text_area_tag 'settings[maintenance_message]', (!@settings['maintenance_message'].nil? && @settings['maintenance_message'].length > 0) ? @settings['maintenance_message'] : l(:maintenance_mode_message_default), :rows => 5, :cols => 85 %>
+	  <i><%= l(:maintenance_mode_schedule_message_variables) %>: %{start}, %{startDate}, %{startTime}, %{end}, %{endDate}, %{endTime}</i>
+	</p>
+
+	<br/>
+</div>
+
+<hr/>
+
+<div id="settings_maintenance_schedule"<%= raw MaintenanceModeFunctions.is_now_scheduled_maintenance ? ' class="active"' : '' %>>
+	<br/>
+	
+	<%= raw l(:maintenance_mode_schedule_directions) %>
+	<br/><br/>
+	<p>
+	  <label><%= l(:maintenance_mode_schedule_label) %></label>
+	  <%= check_box_tag 'settings[maintenance_schedule]', '1', @settings['maintenance_schedule'] %>
+	</p>
+
+	<p>
+	  <label><%= l(:maintenance_mode_schedule_time_label) %><span id="required_scheduled_time" class="required" style="display:<%= @settings['maintenance_schedule'] ? 'inline' : 'none' %>;"> *</span></label>
+	  <%= text_field_tag 'settings[schedule_start]', @settings['schedule_start'], placeholder: Time.new.strftime("%Y-%m-%d %H:%M") %> –
+	  <%= text_field_tag 'settings[schedule_end]', @settings['schedule_end'], placeholder: Time.new.strftime("%Y-%m-%d %H:%M") %>
+	  <i><%= l(:setting_time_format) %>: <%=Time.new.strftime("%Y-%m-%d %H:%M")%></i>
+	</p>
+	<p>
+	  <i><%= l(:maintenance_mode_server_timezone_hint) % [ :timezone => Time.now.zone + " " + Time.now.formatted_offset ] %></i>
+	</p>
+
+	<p>
+	  <label><%= l(:maintenance_mode_schedule_message_label) %><span id="required_scheduled_msg" class="required" style="display:<%= @settings['maintenance_schedule'] ? 'inline' : 'none' %>;"> *</span></label>
+	  <%= text_area_tag 'settings[schedule_message]', (!@settings['schedule_message'].nil? && @settings['schedule_message'].length > 0) ? @settings['schedule_message'] : l(:maintenance_mode_schedule_message_default), :rows => 3, :cols => 85 %>
+	  <i><%= l(:maintenance_mode_schedule_message_variables) %>: %{start}, %{startDate}, %{startTime}, %{end}, %{endDate}, %{endTime}</i>
+	</p>
+</div>

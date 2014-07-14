@@ -1,0 +1,22 @@
+.settingsErrorBox {
+	border-color: red !important;
+}
+
+div#maintenance_mode_banner {
+    background-color: yellow;
+    padding: 10px;
+    position: fixed;
+    z-index: 1000;
+    display: block;
+    width: 100%;
+    box-shadow: -10px 10px 20px -10px black;
+}
+/* push wrapper 35px down */
+#maintenance_mode_banner + #wrapper {
+    padding-top: 35px;
+}
+
+#settings_maintenance.active,
+#settings_maintenance_schedule.active {
+	background-color: #ffd;
+}
