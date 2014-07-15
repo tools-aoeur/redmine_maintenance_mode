@@ -29,7 +29,8 @@ class MaintenanceModeHook < Redmine::Hook::ViewListener
 	  
 	  # if maintenance mode is activated or if we are in the middle of a scheduled maintenance
 	  if settings[:maintenance_active] || MaintenanceModeFunctions.is_now_scheduled_maintenance
-		return div_start + l(:maintenance_mode_admin_message) + div_end
+	    plugin_url = Setting.protocol + "://" + Setting.host_name + Redmine::Utils.relative_url_root + "/settings/plugin/redmine_maintenance_mode"
+		return div_start + l(:maintenance_mode_admin_message) % [ :pluginurl => plugin_url ] + div_end
 	  
 	  # if maintenance is scheduled and current time is before the scheduled maintenance start time
 	  elsif settings[:maintenance_scheduled] && settings.has_key?(:schedule_start) && Time.now < Time.parse(settings[:schedule_start])

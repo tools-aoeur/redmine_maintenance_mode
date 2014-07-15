@@ -3,7 +3,7 @@ de:
   maintenance_mode_active: Wartungsmodus aktivieren?
   maintenance_mode_message_label: Wartungshinweis
   maintenance_mode_message_default: "<h1>Geplante Wartungsarbeiten</h1>\n<p>Redmine ist für kurze Zeit nicht verfügbar, um eine regelmäßige Instandhaltung durchzuführen. Prüfe in einigen Minuten erneut.</p>"
-  maintenance_mode_admin_message: "System befindet sich im Wartungsmodus! Nur Administratoren haben Zugriff! Der Wartungsmodus kann auf <a href=\"/settings/plugin/redmine_maintenance_mode\">dieser Seite</a> beendet werden."
+  maintenance_mode_admin_message: "System befindet sich im Wartungsmodus! Nur Administratoren haben Zugriff! Der Wartungsmodus kann auf <a href=\"%{pluginurl}\">dieser Seite</a> beendet werden."
   maintenance_mode_schedule_directions: Möchten Sie Wartungsarbeiten planen und die Nutzer vorab per Banner benachrichtigen?
   maintenance_mode_schedule_label: Wartungsarbeiten planen?
   maintenance_mode_schedule_message_label: Vorankündigung an die Benutzer 
