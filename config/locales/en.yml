@@ -2,7 +2,7 @@
 en:
   maintenance_mode_active: Activate maintenance mode?
   maintenance_mode_message_label: Maintenance message
-  maintenance_mode_message_default: "<h1>Ongoing maintenance</h1>\n<p>This site is currently under maintenance. Please check back later.</p>"
+  maintenance_mode_message_default: "This site is currently under maintenance. Please check back later!"
   maintenance_mode_admin_message: "System is in maintenance mode! Only administrators have access. Maintenance mode can be disabled on <a href=\"%{pluginurl}\">this site</a>."
   maintenance_mode_schedule_directions: Do you want to schedule maintenance work and notify users in advance?
   maintenance_mode_schedule_label: Schedule maintenance?
