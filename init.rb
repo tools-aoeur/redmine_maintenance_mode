@@ -12,7 +12,7 @@ Redmine::Plugin.register :redmine_maintenance_mode do
   url 'https://github.com/tofi86/redmine_maintenance_mode'
   author_url 'https://github.com/tofi86'
   
-  requires_redmine :version_or_higher => '2.0.0'
+  requires_redmine :version_or_higher => '2.4.0'
   
   settings :default => {
     'maintenance_active' => false,
