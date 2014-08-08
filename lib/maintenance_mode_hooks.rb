@@ -35,14 +35,14 @@ class MaintenanceModeHook < Redmine::Hook::ViewListener
       end
      
     else
-
+      # show banner for logged out users - but only if we are in the middle of a maintenance period
       if settings[:maintenance_active] || MaintenanceModeFunctions.is_now_scheduled_maintenance
         div_banner settings[:maintenance_message_f]
       end
-
     end
   end
-    
+  
+  
   # html code for the banner notification with custom message
   def div_banner(message)
     "<div id=\"maintenance_mode_banner\">" + message + "</div>"
