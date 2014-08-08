@@ -9,7 +9,7 @@ You can also **schedule maintenance windows.** Users will then be notified in ad
 
 **Be aware that this plugin only blocks non-admin users from the system, while the redmine rails stack is still running!**
 
-This plugin is tested with Redmine v2.5.1
+This plugin is tested with Redmine v2.4.x and v2.5.x
 
 
 Installation
