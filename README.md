@@ -3,19 +3,20 @@ Redmine Maintenance Mode plugin
 
 Plugin to prevent users from using Redmine while system operations are being done.
 
-Only already logged-in administrators have access to the redmine system during maintenance time whereas a configurable maintenance notice is shown to "normal" users.
+Only administrators have access to the redmine system during maintenance time whereas a configurable maintenance notice is shown to other users. Also, login for normal users is blocked!
 
-You can also **schedule maintenance windows.** Users will then be notified in advance with a configurable banner message. If maintenance time has come, system will be put in maintenance mode automatically!
+You can also **schedule maintenance windows.** Users will then be notified in advance with a configurable banner message. If maintenance time has come, system will be put in maintenance mode automatically. This will log out non-admin users and prevent them from logging back in.
 
-**Be aware that this plugin only blocks non-admin users from the system, while the redmine rails stack is still running!**
+**Be aware that this plugin only blocks non-admin users from the system, while the redmine rails stack is still running! It will NOT shut down redmine!**
 
-This plugin is tested with Redmine v2.4.x and v2.5.x
+* This plugin is tested with Redmine v2.4.x and v2.5.x
+* This plugin is listed in the [redmine.org plugin repository](http://www.redmine.org/plugins/redmine_maintenance_mode)
 
 
 Installation
 ------------
 
-* Clone or download this repo into your **redmine_root/plugins/** folder
+* Clone or [download](https://github.com/tofi86/redmine_maintenance_mode/releases) this repo into your **redmine_root/plugins/** folder
 ```
 $ git clone https://github.com/tofi86/redmine_maintenance_mode.git
 ```
