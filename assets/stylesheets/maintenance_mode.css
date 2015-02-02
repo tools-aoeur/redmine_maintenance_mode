@@ -15,8 +15,16 @@ div#maintenance_mode_banner {
 #maintenance_mode_banner + #wrapper {
     padding-top: 35px;
 }
+#maintenance_mode_banner + #wrapper #top-menu {
+    padding-top: 10px;
+}
 
 #settings_maintenance.active,
 #settings_maintenance_schedule.active {
 	background-color: #ffd;
+}
+
+#login-form .maintenance_message {
+    background-color: yellow;
+    font-weight: bold;
 }

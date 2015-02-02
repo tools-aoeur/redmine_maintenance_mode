@@ -13,14 +13,15 @@ Redmine::Plugin.register :redmine_maintenance_mode do
   author_url 'https://github.com/tofi86'
   
   requires_redmine :version_or_higher => '2.4.0'
+  requires_redmine_plugin :redmine_base_deface, :version_or_higher => '0.0.1'
   
   settings :default => {
     'maintenance_active' => false,
     'maintenance_message' => '',
     'maintenance_schedule' => false,
     'schedule_message' => '',
-    'schedule_start' => '2014-07-14 14:00',
-    'schedule_end' => '2014-07-14 15:00'
+    'schedule_start' => '2015-01-31 14:00',
+    'schedule_end' => '2015-01-31 15:00'
   }, :partial => 'redmine_maintenance_mode_settings'
 end
 
