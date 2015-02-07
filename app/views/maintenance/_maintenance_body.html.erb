@@ -4,7 +4,7 @@
   plugin_url = Setting.protocol + "://" + Setting.host_name + "/settings/plugin/redmine_maintenance_mode"
 %>
 <% if User.current.login? && (settings[:maintenance_active] || MaintenanceModeFunctions.is_now_scheduled_maintenance) %>
-  <div id="maintenance_mode_banner"><%= l(:maintenance_mode_admin_message).html_safe % [ :pluginurl => plugin_url ] %></div>
+  <div id="maintenance_mode_banner"><%=raw l(:maintenance_mode_admin_message) % [ :pluginurl => plugin_url ] %></div>
 <% elsif User.current.login? && settings[:maintenance_scheduled] && settings.has_key?(:schedule_start) && Time.now < Time.parse(settings[:schedule_start]) %>
   <div id="maintenance_mode_banner"><%= settings[:scheduled_message_f] %></div>
 <% else settings[:maintenance_active] || MaintenanceModeFunctions.is_now_scheduled_maintenance %>
