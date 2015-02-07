@@ -16,6 +16,8 @@ You can also **schedule maintenance windows.** Users will then be notified in ad
 Installation
 ------------
 
+* **This plugin requires the ["Redmine Base Deface"-Plugin](https://github.com/jbbarth/redmine_base_deface)!**
+  * *Make sure you got it installed before installing or upgrading the maintenance mode plugin...*
 * Clone or [download](https://github.com/tofi86/redmine_maintenance_mode/releases) this repo into your **redmine_root/plugins/** folder
 ```
 $ git clone https://github.com/tofi86/redmine_maintenance_mode.git
