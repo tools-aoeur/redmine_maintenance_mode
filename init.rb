@@ -8,7 +8,7 @@ Redmine::Plugin.register :redmine_maintenance_mode do
   name 'Redmine Maintenance Mode'
   author 'Tobias Fischer'
   description 'This is a plugin to schedule and announce maintenance downtimes as well as disable user access to redmine during maintenance times.'
-  version '1.1.0'
+  version '2.0.0'
   url 'https://github.com/tofi86/redmine_maintenance_mode'
   author_url 'https://github.com/tofi86'
   
@@ -20,8 +20,8 @@ Redmine::Plugin.register :redmine_maintenance_mode do
     'maintenance_message' => '',
     'maintenance_schedule' => false,
     'schedule_message' => '',
-    'schedule_start' => '2015-01-31 14:00',
-    'schedule_end' => '2015-01-31 15:00'
+    'schedule_start' => '2015-02-07 14:00',
+    'schedule_end' => '2015-02-07 15:00'
   }, :partial => 'redmine_maintenance_mode_settings'
 end
 
