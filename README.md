@@ -29,6 +29,28 @@ $ rake redmine:plugins:migrate RAILS_ENV=production
 * Restart redmine
 
 
+Upgrade from plugin version 1.x
+-------------------------------
+
+* change to the plugin directory in `redmine_root/plugins/redmine_maintenance_mode`
+* update the git repository by running
+```
+$ git pull
+```
+* change back to the plugins directory `redmine_root/plugins/`
+* Install the ["Redmine Base Deface"](https://github.com/jbbarth/redmine_base_deface)-Plugin
+  * it's needed for easier adjustments in the view templates to display the maintenance messages
+```
+$ git clone https://github.com/jbbarth/redmine_base_deface.git
+```
+* change to your redmine root directory and run the following commands:
+```
+$ bundle install
+$ rake redmine:plugins:migrate RAILS_ENV=production
+```
+* Restart redmine
+
+
 License
 -------
 
