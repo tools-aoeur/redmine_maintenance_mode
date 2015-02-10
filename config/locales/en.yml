@@ -11,3 +11,4 @@ en:
   maintenance_mode_schedule_message_variables: Valid variables
   maintenance_mode_schedule_time_label: Maintenance period
   maintenance_mode_server_timezone_hint: "Time and date are evaluated using the server's timezone settings: %{timezone}"
+  maintenance_mode_login_admin_only: Login is currently limited to administrators only!

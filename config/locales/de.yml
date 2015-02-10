@@ -11,3 +11,4 @@ de:
   maintenance_mode_schedule_message_variables: Erlaubte Variablen
   maintenance_mode_schedule_time_label: Zeitraum der Wartungsarbeiten
   maintenance_mode_server_timezone_hint: "Zeitangaben richten sich nach der Zeitzone des Servers: %{timezone}"
+  maintenance_mode_login_admin_only: Anmeldung derzeit nur für Administratoren möglich!

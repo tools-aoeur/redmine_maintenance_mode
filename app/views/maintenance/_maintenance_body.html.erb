@@ -1,0 +1,12 @@
+<%
+  require 'maintenance_mode_functions'
+  settings = MaintenanceModeFunctions.get_maintenance_plugin_settings
+  plugin_url = Setting.protocol + "://" + Setting.host_name + "/settings/plugin/redmine_maintenance_mode"
+%>
+<% if User.current.login? && (settings[:maintenance_active] || MaintenanceModeFunctions.is_now_scheduled_maintenance) %>
+  <div id="maintenance_mode_banner"><%=raw l(:maintenance_mode_admin_message) % [ :pluginurl => plugin_url ] %></div>
+<% elsif User.current.login? && settings[:maintenance_scheduled] && settings.has_key?(:schedule_start) && Time.now < Time.parse(settings[:schedule_start]) %>
+  <div id="maintenance_mode_banner"><%= textilizable(settings[:scheduled_message_f]) %></div>
+<% elsif settings[:maintenance_active] || MaintenanceModeFunctions.is_now_scheduled_maintenance %>
+  <div id="maintenance_mode_banner"><%= textilizable(settings[:maintenance_message_f]) %></div>
+<% end %>

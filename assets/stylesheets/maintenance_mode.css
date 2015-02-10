@@ -11,12 +11,23 @@ div#maintenance_mode_banner {
     width: 100%;
     box-shadow: -10px 10px 20px -10px black;
 }
+div#maintenance_mode_banner p {
+    margin: 0;
+}
 /* push wrapper 35px down */
 #maintenance_mode_banner + #wrapper {
     padding-top: 35px;
+}
+#maintenance_mode_banner + #wrapper #top-menu {
+    padding-top: 10px;
 }
 
 #settings_maintenance.active,
 #settings_maintenance_schedule.active {
 	background-color: #ffd;
+}
+
+#login-form .maintenance_message {
+    background-color: yellow;
+    font-weight: bold;
 }
