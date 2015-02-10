@@ -13,8 +13,8 @@ module MaintenanceMode
                 
         # only activate maintenance message if maintenance mode is activated or if we're in the middle of a scheduled maintenance 
         if settings[:maintenance_active] || MaintenanceModeFunctions.is_now_scheduled_maintenance
-          # and only activate it for non-admin users
-          unless User.current.admin?
+          # and only activate it for non-admin users (or sudoers if 'redmine_sudo' plugin is installed)
+          unless User.current.admin? || (Redmine::Plugin.installed?("redmine_sudo") && User.current.sudoer?)
             logout_user if User.current.logged?
             require_login unless params[:controller] == "account" && params[:action] == "login"
             return false
