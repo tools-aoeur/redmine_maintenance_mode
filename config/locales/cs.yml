@@ -1,0 +1,14 @@
+# Czech strings go here for Rails i18n
+cs:
+  maintenance_mode_active: Aktivovat režim odstávky?
+  maintenance_mode_message_label: Zpráva odstávky
+  maintenance_mode_message_default: "Tento web je nyní odstaven. Zkuste web navštívit později!"
+  maintenance_mode_admin_message: "System je v režimu odstávky! Jenom administrátoři mají do něj přístup. Režim odstávky může být vypnut na <a href=\"%{pluginurl}\">této stránce</a>."
+  maintenance_mode_schedule_directions: Chcete naplánovat odstávku systému a informovat uživatele s předstihem?
+  maintenance_mode_schedule_label: Plánovač odstávky?
+  maintenance_mode_schedule_message_label: Upozornění uživatelů na plánovanou odstávku 
+  maintenance_mode_schedule_message_default: "Upozornění: Mezi %{start} a %{end} bude tento systém nedostupný z důvodu pravidelné údržby!"
+  maintenance_mode_schedule_message_variables: Platné proměnné
+  maintenance_mode_schedule_time_label: Doba odstávky
+  maintenance_mode_server_timezone_hint: "Čas a datum je řízen pomocí nastavení časového pásma serveru: %{timezone}"
+  maintenance_mode_login_admin_only: Přihlášení je nyní dovoleno pouze administrátorům!
