@@ -1,0 +1,14 @@
+# Simplified Chinese strings go here for Rails i18n
+zh:
+  maintenance_mode_active: 启用维护模式？
+  maintenance_mode_message_label: 维护通知
+  maintenance_mode_message_default: "当前站点正在维护。请稍后再试！"
+  maintenance_mode_admin_message: "当前系统正在维护，仅限系统管理员访问。维护模式可在 <a href=\"%{pluginurl}\">设置页</a> 关闭。"
+  maintenance_mode_schedule_directions: 是否安排维护工作，并提前通知用户？
+  maintenance_mode_schedule_label: 维护计划
+  maintenance_mode_schedule_message_label: 向用户提供预维护通知 
+  maintenance_mode_schedule_message_default: "维护通知：本系统将于 %{start} ~ %{end} 期间升级维护并关停服务。望知晓。"
+  maintenance_mode_schedule_message_variables: 有效参数
+  maintenance_mode_schedule_time_label: 维护周期
+  maintenance_mode_server_timezone_hint: "使用服务器时区：%{timezone} 设置维护的时间和日期信息"
+  maintenance_mode_login_admin_only: 维护期内，可登陆账号仅限系统管理员！
