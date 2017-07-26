@@ -31,3 +31,9 @@ div#maintenance_mode_banner p {
     background-color: yellow;
     font-weight: bold;
 }
+#login-form div.maintenance_message {
+    border: 1px solid red;
+    border-radius: 4px;
+    padding: 0 12px;
+    margin-bottom: 20px;
+}
