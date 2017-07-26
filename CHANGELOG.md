@@ -1,6 +1,15 @@
 ChangeLog
 ---------
 
+### v2.1.0
+*(2017-07-27)*
+
+* Support for Redmine 3.4
+* Add "Maintenance Mode" as a separate entry in admin menu
+* New locale *Simplified Chinese* `zh` (PR #11, Thanks to @archonwang)
+* New locale *Czech* `cs` (PR #9, Thanks to @tuten69)
+
+
 ### v2.0.1
 *(2015-02-10)*
 

@@ -1,5 +1,5 @@
 Redmine Maintenance Mode plugin
-========================
+===============================
 
 Plugin to prevent users from using Redmine while system operations are being done.
 
@@ -9,7 +9,7 @@ You can also **schedule maintenance windows.** Users will then be notified in ad
 
 **Be aware that this plugin only blocks non-admin users from the system, while the redmine rails stack is still running! It will NOT shut down redmine!**
 
-* This plugin is tested with Redmine v2.4 - v2.6, v3.0 - v3.2
+* This plugin is tested with Redmine v2.4 - v2.6, v3.0 - v3.4
 * This plugin is listed in the [redmine.org plugin repository](http://www.redmine.org/plugins/redmine_maintenance_mode)
 
 
