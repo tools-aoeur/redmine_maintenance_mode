@@ -1,5 +1,6 @@
 # German strings go here for Rails i18n
 de:
+  maintenance_mode: Wartungsmodus
   maintenance_mode_active: Wartungsmodus aktivieren?
   maintenance_mode_message_label: Wartungshinweis
   maintenance_mode_message_default: "Redmine ist für kurze Zeit nicht verfügbar, um eine regelmäßige Instandhaltung durchzuführen. Prüfe in einigen Minuten erneut!"

@@ -1,5 +1,6 @@
 # English strings go here for Rails i18n
 en:
+  maintenance_mode: Maintenance mode
   maintenance_mode_active: Activate maintenance mode?
   maintenance_mode_message_label: Maintenance message
   maintenance_mode_message_default: "This site is currently under maintenance. Please check back later!"

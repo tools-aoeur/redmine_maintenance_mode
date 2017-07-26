@@ -1,5 +1,6 @@
 # Czech strings go here for Rails i18n
 cs:
+  maintenance_mode: Režim odstávky
   maintenance_mode_active: Aktivovat režim odstávky?
   maintenance_mode_message_label: Zpráva odstávky
   maintenance_mode_message_default: "Tento web je nyní odstaven. Zkuste web navštívit později!"
