@@ -1,0 +1,15 @@
+# FR strings go here for Rails i18n
+fr:
+  maintenance_mode: Mode Maintenance
+  maintenance_mode_active: Activer le mode Maintenance?
+  maintenance_mode_message_label: Message de maintenance
+  maintenance_mode_message_default: "Ce site est actuellement en maintenance. Veuillez réessayer plus tard."
+  maintenance_mode_admin_message: "Le site sytème est en mode maintenance! Seuls les administrateurs ont accès. Le mode maintenance peut être désactivé sur <a href=\"%{pluginurl}\">this site</a>."
+  maintenance_mode_schedule_directions: Souhaitez-vous planifier la maintenance et avertir les utilisateurs à l'avance ?"
+  maintenance_mode_schedule_label: Planifier la maintenance ?
+  maintenance_mode_schedule_message_label: Notification utilisateur avant maintenance
+  maintenance_mode_schedule_message_default: "Notification: Entre %{start} et %{end} ce système sera indisponible à des fins de maintenance!"
+  maintenance_mode_schedule_message_variables: Variables valides
+  maintenance_mode_schedule_time_label: Période de Maintenance
+  maintenance_mode_server_timezone_hint: "L'heure et la date sont évalués sur la base du fuseau horaire du serveur: %{timezone}"
+  maintenance_mode_login_admin_only: "L'ouverture de session est restreinte uniquement aux administrateurs"

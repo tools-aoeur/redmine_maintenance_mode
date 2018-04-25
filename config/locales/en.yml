@@ -7,7 +7,7 @@ en:
   maintenance_mode_admin_message: "System is in maintenance mode! Only administrators have access. Maintenance mode can be disabled on <a href=\"%{pluginurl}\">this site</a>."
   maintenance_mode_schedule_directions: Do you want to schedule maintenance work and notify users in advance?
   maintenance_mode_schedule_label: Schedule maintenance?
-  maintenance_mode_schedule_message_label: Pre-maintenance notification to users 
+  maintenance_mode_schedule_message_label: Pre-maintenance notification to users
   maintenance_mode_schedule_message_default: "Notification: Between %{start} and %{end} this system will be shut down for maintenance reasons!"
   maintenance_mode_schedule_message_variables: Valid variables
   maintenance_mode_schedule_time_label: Maintenance period
