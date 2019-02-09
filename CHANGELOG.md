@@ -1,6 +1,13 @@
 ChangeLog
 ---------
 
+### v2.2.0
+*(2019-02-09)*
+
+* Support for Redmine 4 with Rails 5 (issue #14)
+* New locale *French* `fr` (PR #13, Thanks to @fjudith)
+
+
 ### v2.1.0
 *(2017-07-27)*
 
