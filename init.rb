@@ -34,8 +34,15 @@ end
 
 # Patches to the Redmine core.
 require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
+# Patches to the Redmine core.
+require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
 
-if Rails::VERSION::MAJOR >= 3
+if Rails::VERSION::MAJOR >= 5
+  ActiveSupport::Reloader.to_prepare do
+    require_dependency 'application_controller'
+    AttachmentsController.send(:include, MaintenanceMode)
+  end
+elsif Rails::VERSION::MAJOR >= 3
   ActionDispatch::Callbacks.to_prepare do
     require_dependency 'application_controller'
     ApplicationController.send(:include, MaintenanceMode)

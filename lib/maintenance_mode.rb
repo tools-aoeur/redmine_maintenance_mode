@@ -22,7 +22,7 @@ module MaintenanceMode
         end
       end
       
-      before_filter(:show_maintenance_mode_page)
+      before_action(:show_maintenance_mode_page)
       
     end
   end
