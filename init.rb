@@ -41,7 +41,6 @@ if Rails::VERSION::MAJOR >= 5
   ActiveSupport::Reloader.to_prepare do
     require_dependency 'application_controller'
     ApplicationController.send(:include, MaintenanceMode)
-    AttachmentsController.send(:include, MaintenanceMode)
   end
 elsif Rails::VERSION::MAJOR >= 3
   ActionDispatch::Callbacks.to_prepare do
