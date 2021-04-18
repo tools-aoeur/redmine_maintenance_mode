@@ -8,7 +8,7 @@ Redmine::Plugin.register :redmine_maintenance_mode do
   name 'Redmine Maintenance Mode'
   author 'Tobias Fischer'
   description 'This is a plugin to schedule and announce maintenance downtimes as well as disable user access to redmine during maintenance times.'
-  version '2.2.0'
+  version '2.2.1'
   url 'https://github.com/tofi86/redmine_maintenance_mode'
   author_url 'https://github.com/tofi86'
 
@@ -40,7 +40,7 @@ require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
 if Rails::VERSION::MAJOR >= 5
   ActiveSupport::Reloader.to_prepare do
     require_dependency 'application_controller'
-    AttachmentsController.send(:include, MaintenanceMode)
+    ApplicationController.send(:include, MaintenanceMode)
   end
 elsif Rails::VERSION::MAJOR >= 3
   ActionDispatch::Callbacks.to_prepare do
