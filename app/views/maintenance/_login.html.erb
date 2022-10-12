@@ -1,0 +1,9 @@
+<%
+  settings = MaintenanceMode::Functions.get_maintenance_plugin_settings
+%>
+<% if settings[:maintenance_active] || MaintenanceMode::Functions.is_now_scheduled_maintenance %>
+<div class="maintenance_message">
+  <%= textilizable(settings[:maintenance_message_f]) %>
+  <p><%= l(:maintenance_mode_login_admin_only) %></p>
+</div>
+<% end %>

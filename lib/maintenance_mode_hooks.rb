@@ -6,9 +6,9 @@ class MaintenanceModeHook < Redmine::Hook::ViewListener
     tags = stylesheet_link_tag('admin', plugin: 'redmine_maintenance_mode')
 
     # read plugin settings
-    settings = MaintenanceModeFunctions.get_maintenance_plugin_settings
+    settings = MaintenanceMode::Functions.get_maintenance_plugin_settings
 
-    if settings[:maintenance_active] || settings[:maintenance_scheduled] || MaintenanceModeFunctions.is_now_scheduled_maintenance
+    if settings[:maintenance_active] || settings[:maintenance_scheduled] || MaintenanceMode::Functions.is_now_scheduled_maintenance
       tags += stylesheet_link_tag 'maintenance_mode', plugin: 'redmine_maintenance_mode'
     end
 
