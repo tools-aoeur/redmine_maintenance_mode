@@ -1,8 +1,5 @@
 Rails.autoloaders.main.ignore("#{__dir__}/lib") if Rails::VERSION::MAJOR >= 6
 
-require_relative 'lib/maintenance_mode_hooks'
-require_relative 'lib/maintenance_mode/functions'
-require_relative 'lib/maintenance_mode/hooks'
 require_relative 'lib/maintenance_mode'
 
 Rails.logger.info 'Starting Maintenance Mode plugin for Redmine'

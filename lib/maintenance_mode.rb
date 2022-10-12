@@ -1,6 +1,7 @@
-module MaintenanceMode
-  require_relative 'maintenance_mode_functions'
+require_relative 'maintenance_mode/hooks'
+require_relative 'maintenance_mode/functions'
 
+module MaintenanceMode
   def self.included(base)
     base.class_eval do
       unloadable
