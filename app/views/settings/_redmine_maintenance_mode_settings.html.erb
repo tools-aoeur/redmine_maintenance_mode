@@ -1,6 +1,6 @@
 <% content_for :header_tags do %>
-<%= stylesheet_link_tag 'maintenance_mode', :plugin => 'redmine_maintenance_mode' %>
-<%= javascript_include_tag 'form_validation.js', :plugin => 'redmine_maintenance_mode' %>
+<%= stylesheet_link_tag 'maintenance_mode', plugin: 'redmine_maintenance_mode' %>
+<%= javascript_include_tag 'form_validation.js', plugin: 'redmine_maintenance_mode' %>
 <% end %>
 
 <div id="settings_maintenance"<%= raw @settings['maintenance_active'] ? ' class="active"' : '' %>>
@@ -22,7 +22,7 @@
 
 <hr/>
 
-<div id="settings_maintenance_schedule"<%= raw MaintenanceMode::Functions.is_now_scheduled_maintenance ? ' class="active"' : '' %>>
+<div id="settings_maintenance_schedule"<%= raw MaintenanceMode::Functions.scheduled_maintenance_ongoing? ? ' class="active"' : '' %>>
 	<br/>
 	
 	<%= raw l(:maintenance_mode_schedule_directions) %>

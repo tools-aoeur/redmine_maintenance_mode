@@ -2,7 +2,7 @@ module MaintenanceMode
   class Functions
     include Redmine::I18n
 
-    def self.get_maintenance_plugin_settings
+    def self.get_settings
       settings = {}
 
       settings[:maintenance_active] = Setting.plugin_redmine_maintenance_mode['maintenance_active']
@@ -26,24 +26,55 @@ module MaintenanceMode
         settings[:schedule_endDate] = format_date(settings[:schedule_end])
         settings[:schedule_endTime] = format_time(settings[:schedule_end], false)
 
-        searchReplaceVariables = [start: settings[:schedule_start_f], startDate: settings[:schedule_startDate], startTime: settings[:schedule_startTime], end: settings[:schedule_end_f], endDate: settings[:schedule_endDate], endTime: settings[:schedule_endTime]]
+        variables = [start: settings[:schedule_start_f],
+                     startDate: settings[:schedule_startDate],
+                     startTime: settings[:schedule_startTime],
+                     end: settings[:schedule_end_f],
+                     endDate: settings[:schedule_endDate],
+                     endTime: settings[:schedule_endTime]]
 
-        settings[:maintenance_message_f] = settings[:maintenance_message] % searchReplaceVariables
-        settings[:scheduled_message_f] = settings[:scheduled_message] % searchReplaceVariables
+        settings[:maintenance_message_f] = settings[:maintenance_message] % variables
+        settings[:scheduled_message_f] = settings[:scheduled_message] % variables
       end
 
       settings
     end
 
-    def self.is_now_scheduled_maintenance
-      s = get_maintenance_plugin_settings
-      t = Time.now
+    def self.maintenance_message
+      return nil unless maintenance_ongoing?
 
-      if s.has_key?(:schedule_start)
-        s[:maintenance_scheduled] && t > Time.parse(s[:schedule_start]) && t < Time.parse(s[:schedule_end])
-      else
-        false
-      end
+      settings = get_settings
+      settings[:maintenance_message_f]
+    end
+
+    def self.notification?
+      settings = get_settings
+      settings[:maintenance_active] || settings[:maintenance_scheduled]
+    end
+
+    def self.maintenance_ongoing?
+      settings = get_settings
+      return true if settings[:maintenance_active]
+      return false unless settings[:maintenance_scheduled]
+
+      scheduled_maintenance_ongoing?
+    end
+
+    def self.scheduled_maintenance_ongoing?
+      settings = get_settings
+      return false unless settings[:maintenance_scheduled]
+
+      now = Time.now
+      settings.key?(:schedule_start) && now > Time.parse(settings[:schedule_start]) &&
+        settings.key?(:schedule_end) && now < Time.parse(settings[:schedule_end])
+    end
+
+    def self.maintenance_planned?
+      settings = get_settings
+      return false unless settings[:maintenance_scheduled]
+
+      now = Time.now
+      settings.key?(:schedule_start) && now < Time.parse(settings[:schedule_start])
     end
   end
 end
