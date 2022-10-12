@@ -1,6 +1,7 @@
-<% if MaintenanceMode::Functions.maintenance_ongoing? %>
+<% maintenance_message = MaintenanceMode::Functions.maintenance_message %>
+<% if maintenance_message.present? %>
 <div class="maintenance_message">
-  <%= textilizable(settings[:maintenance_message_f]) %>
+  <%= textilizable(maintenance_message) %>
   <p><%= l(:maintenance_mode_login_admin_only) %></p>
 </div>
 <% end %>

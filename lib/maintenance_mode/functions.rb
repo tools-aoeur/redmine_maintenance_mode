@@ -40,6 +40,13 @@ module MaintenanceMode
       settings
     end
 
+    def self.maintenance_message
+      return nil unless maintenance_ongoing?
+
+      settings = get_settings
+      settings[:maintenance_message_f]
+    end
+
     def self.notification?
       settings = get_settings
       settings[:maintenance_active] || settings[:maintenance_scheduled]

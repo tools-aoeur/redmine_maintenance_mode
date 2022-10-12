@@ -1,4 +1,5 @@
 <%
+  settings = MaintenanceMode::Functions.get_maintenance_plugin_settings
   plugin_url = Setting.protocol + "://" + Setting.host_name + "/settings/plugin/redmine_maintenance_mode"
 %>
 <% if User.current.login? && MaintenanceMode::Functions.maintenance_ongoing? %>
