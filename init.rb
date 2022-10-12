@@ -1,7 +1,5 @@
 Rails.autoloaders.main.ignore("#{__dir__}/lib") if Rails::VERSION::MAJOR >= 6
 
-require_relative 'lib/maintenance_mode_hooks'
-require_relative 'lib/maintenance_mode_functions'
 require_relative 'lib/maintenance_mode'
 
 Rails.logger.info 'Starting Maintenance Mode plugin for Redmine'
@@ -10,12 +8,11 @@ Redmine::Plugin.register :redmine_maintenance_mode do
   name 'Redmine Maintenance Mode'
   author 'Tobias Fischer (orig)'
   description 'This is a plugin to schedule and announce maintenance downtimes as well as disable user access to redmine during maintenance times.'
-  version '2.2.2'
+  version '3.0.0'
   url 'https://github.com/tofi86/redmine_maintenance_mode'
   author_url 'https://github.com/tofi86'
 
   requires_redmine version_or_higher: '3.0.0'
-  requires_redmine_plugin :redmine_base_deface, version_or_higher: '0.0.1'
 
   menu :admin_menu, :redmine_maintenance_mode,
        { controller: 'settings', action: 'plugin', id: :redmine_maintenance_mode },
