@@ -50,6 +50,13 @@ module MaintenanceMode
       return true if settings[:maintenance_active]
       return false unless settings[:maintenance_scheduled]
 
+      scheduled_maintenance_ongoing?
+    end
+
+    def self.scheduled_maintenance_ongoing?
+      settings = get_settings
+      return false unless settings[:maintenance_scheduled]
+
       now = Time.now
       settings.key?(:schedule_start) && now > Time.parse(settings[:schedule_start]) &&
         settings.key?(:schedule_end) && now < Time.parse(settings[:schedule_end])

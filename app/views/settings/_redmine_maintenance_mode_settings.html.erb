@@ -22,7 +22,7 @@
 
 <hr/>
 
-<div id="settings_maintenance_schedule"<%= raw MaintenanceMode::Functions.under_scheduled_maintenance? ? ' class="active"' : '' %>>
+<div id="settings_maintenance_schedule"<%= raw MaintenanceMode::Functions.scheduled_maintenance_ongoing? ? ' class="active"' : '' %>>
 	<br/>
 	
 	<%= raw l(:maintenance_mode_schedule_directions) %>
