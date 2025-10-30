@@ -1,7 +1,3 @@
-Rails.autoloaders.main.ignore("#{__dir__}/lib")
-
-require_relative 'lib/maintenance_mode'
-
 Redmine::Plugin.register :redmine_maintenance_mode do
   name 'Redmine Maintenance Mode'
   author 'Tobias Fischer (orig)'
@@ -13,8 +9,10 @@ Redmine::Plugin.register :redmine_maintenance_mode do
   requires_redmine version_or_higher: '6.1'
 
   menu :admin_menu, :redmine_maintenance_mode,
-       { controller: 'settings', action: 'plugin', id: :redmine_maintenance_mode },
+       { controller: 'maintenance_mode_settings', action: 'index' },
        caption: :maintenance_mode,
+       icon: 'redmine_maintenance_mode',
+       plugin: 'redmine_maintenance_mode',
        after: :auth_sources,
        html: { class: 'icon icon-maintenance_mode' }
 
@@ -29,6 +27,6 @@ Redmine::Plugin.register :redmine_maintenance_mode do
 end
 
 Rails.application.config.after_initialize do
-  require_dependency 'application_controller'
+  require_relative 'lib/maintenance_mode'
   ApplicationController.include MaintenanceMode
 end

@@ -1,0 +1,10 @@
+<% html_title(l(:maintenance_mode)) %>
+
+<%= form_tag(maintenance_mode_settings_path, id: 'settings_form') do %>
+  <div class="box tabular settings">
+    <h3><%= l(:maintenance_mode) %></h3>
+    <%= render 'settings/redmine_maintenance_mode_settings' %>
+  </div>
+
+  <%= submit_tag l(:button_save) %>
+<% end %>
