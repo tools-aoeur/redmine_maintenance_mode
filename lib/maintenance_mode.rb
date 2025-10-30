@@ -4,8 +4,6 @@ require_relative 'maintenance_mode/functions'
 module MaintenanceMode
   def self.included(base)
     base.class_eval do
-      unloadable
-
       # show maintenance message for all "normal" users (except admins)
       def show_maintenance_mode_page
         return unless Functions.maintenance_ongoing?
