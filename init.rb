@@ -26,7 +26,8 @@ Redmine::Plugin.register :redmine_maintenance_mode do
   }, partial: 'redmine_maintenance_mode_settings'
 end
 
-Rails.application.config.after_initialize do
-  require_relative 'lib/maintenance_mode'
-  ApplicationController.include MaintenanceMode
+# init.rb runs on every to_prepare (each dev reload), so rely on Zeitwerk autoloading
+_ = MaintenanceMode::Hooks
+unless ApplicationController.include?(MaintenanceMode::ApplicationControllerPatch)
+  ApplicationController.include MaintenanceMode::ApplicationControllerPatch
 end
